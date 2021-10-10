@@ -1,0 +1,26 @@
+<annotation>
+	<folder>JPEGImages</folder>
+	<filename>12_erosion.png</filename>
+	<path>D:\Program\VOC2007\JPEGImages\12_erosion.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>974</width>
+		<height>731</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>掉块(Flaking of abradable lining material)</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>352</xmin>
+			<ymin>17</ymin>
+			<xmax>794</xmax>
+			<ymax>275</ymax>
+		</bndbox>
+	</object>
+</annotation>

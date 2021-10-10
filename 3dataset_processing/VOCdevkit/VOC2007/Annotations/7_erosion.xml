@@ -1,0 +1,26 @@
+<annotation>
+	<folder>JPEGImages</folder>
+	<filename>7_erosion.png</filename>
+	<path>D:\Program\VOC2007\JPEGImages\7_erosion.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>963</width>
+		<height>722</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>凹痕(dent)</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>277</xmin>
+			<ymin>200</ymin>
+			<xmax>422</xmax>
+			<ymax>412</ymax>
+		</bndbox>
+	</object>
+</annotation>

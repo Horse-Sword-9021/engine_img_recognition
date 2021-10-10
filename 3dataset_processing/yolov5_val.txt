@@ -1,0 +1,9 @@
+D:\Program\项目文件\3dataset_processing\VOCdevkit/VOC2007/JPEGImages/13_erosion.png
+D:\Program\项目文件\3dataset_processing\VOCdevkit/VOC2007/JPEGImages/20_erosion.png
+D:\Program\项目文件\3dataset_processing\VOCdevkit/VOC2007/JPEGImages/21_erosion.png
+D:\Program\项目文件\3dataset_processing\VOCdevkit/VOC2007/JPEGImages/23_erosion.png
+D:\Program\项目文件\3dataset_processing\VOCdevkit/VOC2007/JPEGImages/36_erosion.png
+D:\Program\项目文件\3dataset_processing\VOCdevkit/VOC2007/JPEGImages/4_erosion.png
+D:\Program\项目文件\3dataset_processing\VOCdevkit/VOC2007/JPEGImages/56_erosion.png
+D:\Program\项目文件\3dataset_processing\VOCdevkit/VOC2007/JPEGImages/60_erosion.png
+D:\Program\项目文件\3dataset_processing\VOCdevkit/VOC2007/JPEGImages/63_erosion.png

@@ -1,0 +1,3 @@
+将标签统一转换为yolov5训练所需的“.txt”格式
+运行success
+images和labels文件夹为训练训练集和验证集。所有的txt格式的标签文件，在VOCdevkit/VOC2007/YOLOLabels
