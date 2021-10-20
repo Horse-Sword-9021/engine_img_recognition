@@ -1,3 +1,5 @@
+#没事儿别尝试这个，我也不知道这个能不能用
+
 from xml.dom.minidom import Document
 import os
 import cv2
@@ -5,10 +7,10 @@ import cv2
 
 # def makexml(txtPath, xmlPath, picPath):  # txt所在文件夹路径，xml文件保存路径，图片所在文件夹路径
 def makexml(picPath, txtPath, xmlPath):  # txt所在文件夹路径，xml文件保存路径，图片所在文件夹路径
-    '''
+    """
     此函数用于将yolo格式txt标注文件转换为voc格式xml标注文件
     在自己的标注图片文件夹下建三个子文件夹，分别命名为picture、txt、xml
-    '''
+    """
     dic = {'0': "hat",  # 创建字典用来对类型进行转换
            '1': "person",  # 此处的字典要与自己的classes.txt文件中的类对应，且顺序要一致
            }

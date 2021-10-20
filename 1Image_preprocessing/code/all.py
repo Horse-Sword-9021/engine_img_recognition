@@ -1,4 +1,5 @@
-from os import close
+#from os import close
+import os
 import warnings
 import cv2  # 图像格式BGR
 from matplotlib.colors import Normalize
@@ -7,6 +8,8 @@ import matplotlib.pyplot as plt
 from numpy.core.numeric import True_
 from numpy.lib.function_base import _gradient_dispatcher, median, piecewise
 import time
+
+warnings.filterwarnings('ignore')
 
 
 def window_():
@@ -151,6 +154,19 @@ def threshold_(img, img_gray, i):
     def adapt():  # 自适应阈值处理
         # athdmean = cv2.adaptiveThreshold(img_gray, 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 5, 3)
         athdgauss = cv2.adaptiveThreshold(img_gray, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 5, 3)
+
+        wd = os.getcwd()    #获取工作目录
+        data_base_dir = os.path.join(wd, "1Image_preprocessing/")
+        data_base_dir_1 = os.path.join(data_base_dir, "imgs/")  #文件夹覆盖
+        if not os.path.isdir(data_base_dir):
+            print('无初始数据集！')
+        lower_base_dir = os.path.join(data_base_dir_1, "operate_imgs/")
+        if not os.path.isdir(lower_base_dir):
+            os.mkdir(lower_base_dir)
+        detail_operate_dir = os.path.join(lower_base_dir, "2thresh_adapt/")
+        if not os.path.isdir(detail_operate_dir):
+            os.mkdir(detail_operate_dir)
+
         cv2.imwrite(f'1Image_preprocessing/imgs/operate_imgs/2thresh_adapt/{i}_adapt.png', athdgauss)
         # res=np.hstack((athdmean,athdgauss))
         # picture_show(1, 'adapt', athdmean, athdgauss)
@@ -187,6 +203,19 @@ def smooth(img, i):  # 平滑处理/降噪
     # res = np.hstack((blur, aussian, median_, bilateral, filter2d))  # hstack
     # print(res)
     # picture_show(1, 'median vs average', res)
+
+    wd = os.getcwd()
+    data_base_dir = os.path.join(wd, "1Image_preprocessing/")
+    data_base_dir_1 = os.path.join(data_base_dir, "imgs/")
+    if not os.path.isdir(data_base_dir):
+        print('无初始数据集！')
+    lower_base_dir = os.path.join(data_base_dir_1, "operate_imgs/")
+    if not os.path.isdir(lower_base_dir):
+        os.mkdir(lower_base_dir)
+    detail_operate_dir = os.path.join(lower_base_dir, "1smooth/")
+    if not os.path.isdir(detail_operate_dir):
+        os.mkdir(detail_operate_dir)
+
     cv2.imwrite(f'1Image_preprocessing/imgs/operate_imgs/1smooth/{i}_median.png', median_)
     cv2.imwrite(f'1Image_preprocessing/imgs/operate_imgs/1smooth/{i}_bilateral.png', bilateral)
 
@@ -201,6 +230,19 @@ def morphology(img, i):  # 形态学
     def erosion_():  # 形态学-腐蚀操作
         erosion = cv2.erode(img, kernel, iterations=1)  # (src, kernel, iterations)
         # picture_show(1, 'erosion', erosion)
+
+        wd = os.getcwd()
+        data_base_dir = os.path.join(wd, "1Image_preprocessing/")
+        data_base_dir_1 = os.path.join(data_base_dir, "imgs/")
+        if not os.path.isdir(data_base_dir):
+            print('无初始数据集！')
+        lower_base_dir = os.path.join(data_base_dir_1, "operate_imgs/")
+        if not os.path.isdir(lower_base_dir):
+            os.mkdir(lower_base_dir)
+        detail_operate_dir = os.path.join(lower_base_dir, "3mor_erosion/")
+        if not os.path.isdir(detail_operate_dir):
+            os.mkdir(detail_operate_dir)
+
         cv2.imwrite(f'1Image_preprocessing/imgs/operate_imgs/3mor_erosion/{i}_erosion.png', erosion)
         '''
         erosion_1 = cv2.erode(img, kernel_, iterations=1)
@@ -235,6 +277,19 @@ def open_close_caculate_hat(img, i):  # 开闭运算
     def close():  # 闭,先膨胀，再腐蚀
         closing = cv2.morphologyEx(img, cv2.MORPH_CLOSE, kernel)
         # picture_show(1, 'closing', closing)
+
+        wd = os.getcwd()
+        data_base_dir = os.path.join(wd, "1Image_preprocessing/")
+        data_base_dir_1 = os.path.join(data_base_dir, "imgs/")
+        if not os.path.isdir(data_base_dir):
+            print('无初始数据集！')
+        lower_base_dir = os.path.join(data_base_dir_1, "operate_imgs/")
+        if not os.path.isdir(lower_base_dir):
+            os.mkdir(lower_base_dir)
+        detail_operate_dir = os.path.join(lower_base_dir, "4close/")
+        if not os.path.isdir(detail_operate_dir):
+            os.mkdir(detail_operate_dir)
+
         cv2.imwrite(f'1Image_preprocessing/imgs/operate_imgs/4close/{i}_close.png', closing)
 
     def top_black_hat():  # 顶帽、黑帽
@@ -292,6 +347,18 @@ def picture_gradient_sobel(img, i):
         return laplacian
 
     res = np.hstack((sobel(), scharr(), laplacian()))
+    wd = os.getcwd()
+    data_base_dir = os.path.join(wd, "1Image_preprocessing/")
+    data_base_dir_1 = os.path.join(data_base_dir, "imgs/")
+    if not os.path.isdir(data_base_dir):
+        print('无初始数据集！')
+    lower_base_dir = os.path.join(data_base_dir_1, "operate_imgs/")
+    if not os.path.isdir(lower_base_dir):
+        os.mkdir(lower_base_dir)
+    detail_operate_dir = os.path.join(lower_base_dir, "5sobel_canny/")
+    if not os.path.isdir(detail_operate_dir):
+        os.mkdir(detail_operate_dir)
+
     cv2.imwrite(f'1Image_preprocessing/imgs/operate_imgs/5sobel_canny/{i}_sobel.png', res)
     # picture_show(1, 'res', res)
 
@@ -301,6 +368,19 @@ def canny(img, i):  # Canny边缘检测
     v1 = cv2.Canny(img, 80, 150)  # (img,minval,maxval)
     v2 = cv2.Canny(img, 50, 100)
     res = np.hstack((v1, v2))
+
+    wd = os.getcwd()
+    data_base_dir = os.path.join(wd, "1Image_preprocessing/")
+    data_base_dir_1 = os.path.join(data_base_dir, "imgs/")
+    if not os.path.isdir(data_base_dir):
+        print('无初始数据集！')
+    lower_base_dir = os.path.join(data_base_dir_1, "operate_imgs/")
+    if not os.path.isdir(lower_base_dir):
+        os.mkdir(lower_base_dir)
+    detail_operate_dir = os.path.join(lower_base_dir, "5sobel_canny/")
+    if not os.path.isdir(detail_operate_dir):
+        os.mkdir(detail_operate_dir)
+
     cv2.imwrite(f'1Image_preprocessing/imgs/operate_imgs/5sobel_canny/{i}_canny.png', res)
     # picture_show(1, 'res', res)
 
@@ -333,6 +413,19 @@ def outline(img, i):  # 轮廓操作
     def draw_outline():  # 绘制轮廓---
         res = cv2.drawContours(draw_img, contours, -1, (0, 0, 255), 1)
         # picture_show(1, 'res', res)
+
+        wd = os.getcwd()
+        data_base_dir = os.path.join(wd, "1Image_preprocessing/")
+        data_base_dir_1 = os.path.join(data_base_dir, "imgs/")
+        if not os.path.isdir(data_base_dir):
+            print('无初始数据集！')
+        lower_base_dir = os.path.join(data_base_dir_1, "operate_imgs/")
+        if not os.path.isdir(lower_base_dir):
+            os.mkdir(lower_base_dir)
+        detail_operate_dir = os.path.join(lower_base_dir, "5outline/")
+        if not os.path.isdir(detail_operate_dir):
+            os.mkdir(detail_operate_dir)
+
         cv2.imwrite(f'1Image_preprocessing/imgs/operate_imgs/5outline/{i}_outline.png', res)
 
     def outline_feature():  # 轮廓特征

@@ -1,3 +1,4 @@
+#../项目文件/3dataset_processing
 import xml.etree.ElementTree as ET
 import pickle
 import os
@@ -6,12 +7,13 @@ from os.path import join
 import random
 from shutil import copyfile
 import time
+from tqdm import tqdm
 
 classes = ["凹痕(dent)", "缺口(gap)", "烧蚀(ablation)", "裂纹", "压坑", "撕裂", "撕裂(Tear)", "叶尖卷边",
            "掉块(Flaking of abradable lining material)", "弯曲(Bent)",
            "Dirty", "磨损(Vane_rubbing)", "缝隙(Crack)", "修理痕迹(Repaired_traces)", "carbon"]
 
-TRAIN_RATIO = 80            #训练集80%，测试集20%
+TRAIN_RATIO = 80  # 训练集80%，测试集20%
 
 
 def clear_hidden_files(path):
@@ -40,8 +42,8 @@ def convert(size, box):
 
 
 def convert_annotation(image_id):
-    in_file = open('VOCdevkit/VOC2007/Annotations/%s.xml' % image_id, encoding='UTF-8')                 #GBK编码格式出现问题，在此统一使用UTF-8格式
-    out_file = open('VOCdevkit/VOC2007/YOLOLabels/%s.txt' % image_id, 'w', encoding='UTF-8')            ##########################
+    in_file = open('VOCdevkit/VOC2007/Annotations/%s.xml' % image_id, encoding='UTF-8')  # GBK编码格式出现问题，在此统一使用UTF-8格式
+    out_file = open('VOCdevkit/VOC2007/YOLOLabels/%s.txt' % image_id, 'w', encoding='UTF-8')  ##########################
     tree = ET.parse(in_file)
     root = tree.getroot()
     size = root.find('size')
@@ -62,8 +64,9 @@ def convert_annotation(image_id):
     in_file.close()
     out_file.close()
 
+
 #####
-start=time.perf_counter()
+start = time.perf_counter()
 #####
 wd = os.getcwd()
 wd = os.getcwd()
@@ -110,16 +113,16 @@ if not os.path.isdir(yolov5_labels_test_dir):
     os.mkdir(yolov5_labels_test_dir)
 clear_hidden_files(yolov5_labels_test_dir)
 
-train_file = open(os.path.join(wd, "yolov5_train.txt"), 'w', encoding='UTF-8')       ############################
-test_file = open(os.path.join(wd, "yolov5_val.txt"), 'w', encoding='UTF-8')          ############################
+train_file = open(os.path.join(wd, "yolov5_train.txt"), 'w', encoding='UTF-8')      ############################
+test_file = open(os.path.join(wd, "yolov5_val.txt"), 'w', encoding='UTF-8')         ############################
 train_file.close()
 test_file.close()
-train_file = open(os.path.join(wd, "yolov5_train.txt"), 'a', encoding='UTF-8')       ############################
-test_file = open(os.path.join(wd, "yolov5_val.txt"), 'a', encoding='UTF-8')          ############################
+train_file = open(os.path.join(wd, "yolov5_train.txt"), 'a', encoding='UTF-8')      ############################
+test_file = open(os.path.join(wd, "yolov5_val.txt"), 'a', encoding='UTF-8')         ############################
 list_imgs = os.listdir(image_dir)  # list image files
 prob = random.randint(1, 100)
 print("Probability: %d" % prob)
-for i in range(0, len(list_imgs)):
+for i in tqdm(range(0, len(list_imgs))):            #####
     path = os.path.join(image_dir, list_imgs[i])
     if os.path.isfile(path):
         image_path = image_dir + list_imgs[i]
@@ -146,4 +149,4 @@ for i in range(0, len(list_imgs)):
             copyfile(label_path, yolov5_labels_test_dir + label_name)
 train_file.close()
 test_file.close()
-print(f'耗时{time.perf_counter()-start:.3f}s')
+print(f'耗时{time.perf_counter() - start:.3f}s')

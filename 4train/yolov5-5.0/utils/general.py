@@ -21,6 +21,7 @@ import yaml
 from utils.google_utils import gsutil_getsize
 from utils.metrics import fitness
 from utils.torch_utils import init_torch_seeds
+from PIL import Image, ImageDraw, ImageFont
 
 # Settings
 torch.set_printoptions(linewidth=320, precision=5, profile='long')
@@ -537,7 +538,7 @@ def print_mutation(hyp, results, yaml_file='hyp_evolved.yaml', bucket=''):
         if gsutil_getsize(url) > (os.path.getsize('evolve.txt') if os.path.exists('evolve.txt') else 0):
             os.system('gsutil cp %s .' % url)  # download evolve.txt if larger than local
 
-    with open('evolve.txt', 'a', encoding='UTF-8') as f:  # append result                 ####################################
+    with open('evolve.txt', 'a', encoding='UTF-8') as f:  # append result                 #####################################
         f.write(c + b + '\n')
     x = np.unique(np.loadtxt('evolve.txt', ndmin=2), axis=0)  # load unique rows
     x = x[np.argsort(-fitness(x))]  # sort
@@ -546,7 +547,7 @@ def print_mutation(hyp, results, yaml_file='hyp_evolved.yaml', bucket=''):
     # Save yaml
     for i, k in enumerate(hyp.keys()):
         hyp[k] = float(x[0, i + 7])
-    with open(yaml_file, 'w', encoding='UTF-8') as f:                           ################################################
+    with open(yaml_file, 'w', encoding='UTF-8') as f:                       ################################################
         results = tuple(x[0, :7])
         c = '%10.4g' * len(results) % results  # results (P, R, mAP@0.5, mAP@0.5:0.95, val_losses x 3)
         f.write('# Hyperparameter Evolution Results\n# Generations: %g\n# Metrics: ' % len(x) + c + '\n\n')

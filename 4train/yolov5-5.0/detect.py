@@ -1,3 +1,4 @@
+#../项目文件/4train/yolov5-5.0
 import argparse
 import time
 from pathlib import Path
@@ -105,7 +106,8 @@ def detect(save_img=False):
                     if save_txt:  # Write to file
                         xywh = (xyxy2xywh(torch.tensor(xyxy).view(1, 4)) / gn).view(-1).tolist()  # normalized xywh
                         line = (cls, *xywh, conf) if opt.save_conf else (cls, *xywh)  # label format
-                        with open(txt_path + '.txt', 'a', encoding='UTF-8') as f:                    #########################################
+                        with open(txt_path + '.txt', 'a',
+                                  encoding='UTF-8') as f:  #########################################
                             f.write(('%g ' * len(line)).rstrip() % line + '\n')
 
                     if save_img or view_img:  # Add bbox to image
@@ -165,13 +167,30 @@ if __name__ == '__main__':
     --name：结果保存的文件夹名称
     '''
     parser = argparse.ArgumentParser()
-    parser.add_argument('--weights', nargs='+', type=str, default='weights/best.pt', help='model.pt path(s)')   # 第一次训练时的权重文件为yolov5s.pt
-    parser.add_argument('--source', type=str, default='VOCdevkit/images/train/1_erosion.png', help='source')    # 默认参数为0时打开摄像头  # file/folder,0 for webcam
+    # 第一次训练时的权重文件为yolov5s.pt
+    parser.add_argument('--weights', nargs='+', type=str, default='runs/train\exp10\weights/best.pt', help='model.pt path(s)')  #
+    # 使用性修改
+    # 默认参数为0时打开摄像头  # file/folder,0 for webcam
+    choose = eval(input('使用默认数据输入1，使用摄像头选择0：'))
+    if choose == 1:
+        try:
+            parser.add_argument('--source', type=str, default='VOCdevkit/images/train/1_erosion.png', help='source')  #
+        except Exception as e:
+            print('Check your code:', e.__class__.__name__, e)  # continue #jia
+            print('检查数据来源！')
+    elif choose == 0:
+        try:
+            parser.add_argument('--source', type=str, default='0', help='source')  #
+        except Exception as e:
+            print('Check your code:', e.__class__.__name__, e)  # continue #jia
+            print('检查摄像头是否连接')
+    else:
+        print('请重新选择！')
     parser.add_argument('--img-size', type=int, default=640, help='inference size (pixels)')
     parser.add_argument('--conf-thres', type=float, default=0.25, help='object confidence threshold')
     parser.add_argument('--iou-thres', type=float, default=0.45, help='IOU threshold for NMS')
-    parser.add_argument('--device', default='', help='cuda device, i.e. 0 or 0,1,2,3 or cpu')
-    parser.add_argument('--view-img', action='store_true', help='display results', default=True)
+    parser.add_argument('--device', default='', help='cuda device, i.e. 0 or 0,1,2,3 or cpu')       # CPU GPU
+    parser.add_argument('--view-img', action='store_true', help='display results', default=True)    # 展现推理结果
     parser.add_argument('--save-txt', action='store_true', help='save results to *.txt')
     parser.add_argument('--save-conf', action='store_true', help='save confidences in --save-txt labels')
     parser.add_argument('--nosave', action='store_true', help='do not save images/videos')

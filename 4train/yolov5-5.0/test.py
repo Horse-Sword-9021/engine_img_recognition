@@ -70,7 +70,7 @@ def test(data,
     model.eval()
     if isinstance(data, str):
         is_coco = data.endswith('coco.yaml')
-        with open(data) as f:
+        with open(data, encoding='UTF-8') as f:
             data = yaml.load(f, Loader=yaml.SafeLoader)
     check_dataset(data)  # check
     nc = 1 if single_cls else int(data['nc'])  # number of classes

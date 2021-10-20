@@ -1,3 +1,4 @@
+#../项目文件
 # from code.all import threshold_
 from os import close
 import warnings
@@ -8,11 +9,16 @@ import matplotlib.pyplot as plt
 from numpy.core.numeric import True_
 from numpy.lib.function_base import _gradient_dispatcher, median, piecewise
 import time
+from tqdm import tqdm
 import all
+
+engine_img = []
+for i in tqdm(range(1, 66)):
+    engine_img.append(cv2.imread(f'1Image_preprocessing/imgs/imgs/{i}.png'))
 
 
 def main():
-    engine_img = []
+    # engine_img = []
     plt_engine_img = []
     gray_engine_img = []
     smooth_engine_img = []
@@ -25,13 +31,13 @@ def main():
     print('start'.center(scale, '-'))
     start = time.perf_counter()
 
-    for i in range(1, 66):
+    for i in tqdm(range(1, len(engine_img)+1)):  # len(engine_img)+1
 
         a = '*' * i
         b = '.' * (scale - i)
         c = (i / scale) * 100
 
-        engine_img.append(cv2.imread(f'1Image_preprocessing/imgs/imgs/{i}.png'))
+        # engine_img.append(cv2.imread(f'1Image_preprocessing/imgs/imgs/{i}.png'))
         plt_engine_img.append(cv2.imread(f'1Image_preprocessing/imgs/imgs/{i}.png'))
         gray_engine_img.append(cv2.imread(f'1Image_preprocessing/imgs/imgs/{i}.png', cv2.IMREAD_GRAYSCALE))
 
@@ -42,7 +48,8 @@ def main():
             print('Check your code:smooth()', e.__class__.__name__, e)  # continue #jia
 
         smooth_engine_img.append(cv2.imread(f'1Image_preprocessing/imgs/operate_imgs/1smooth/{i}_bilateral.png'))
-        gray_smooth_engine_img.append(cv2.imread(f'1Image_preprocessing/imgs/operate_imgs/1smooth/{i}_bilateral.png', cv2.IMREAD_GRAYSCALE))
+        gray_smooth_engine_img.append(
+            cv2.imread(f'1Image_preprocessing/imgs/operate_imgs/1smooth/{i}_bilateral.png', cv2.IMREAD_GRAYSCALE))
         try:
             all.threshold_(smooth_engine_img[i - 1], gray_smooth_engine_img[i - 1], i)
         except Exception as e:
@@ -73,10 +80,10 @@ def main():
             all.outline(close_img[i - 1], i)
         except Exception as e:
             print('Check your code:outline()', e.__class__.__name__, e)  # continue #jia
-        dur = time.perf_counter() - start
-        print('\r{:^3.0f}%[{}->{}]{:.2f}s'.format(c, a, b, dur), end='')
+        # dur = time.perf_counter() - start
+        # print('\r{:^3.0f}%[{}->{}]{:.2f}s'.format(c, a, b, dur), end='')
         # time.sleep(0.1)
-    print()
+
     print('end'.center(scale, '-'))
     print(f'耗时{time.perf_counter() - start:.3f}秒')
 
