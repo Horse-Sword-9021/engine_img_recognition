@@ -421,3 +421,4 @@
 * 4训练\yolov5-5.0\test.py
 * 4训练\yolov5-5.0\utils\general.py
 * 4训练\yolov5-5.0\utils\google_utils.py
+   * 不用理这几个文件
