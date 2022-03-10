@@ -1,14 +1,19 @@
-#Horse-Sword
-###新人第一次尝试，如有不妥，还请见谅。别喷，喷就是你对。
-##如有疑问，可联系
+# Horse-Sword
+  
+## 新人第一次尝试，如有不妥，还请见谅。别喷，喷就是你对
+
+## 如有疑问，可联系
+
         微信(Wechat)：Horse-Sword
         QQ：3071910019
         Email：3071910019@qq.com
-#欢迎大家一起来交流！！！
 
-###所有说明中提到源码的行数，是进行了相关修改、说明过后的，其中yolov5-5.0说明中提到的行数与官方文件中的不一致，所有说明以本文件为准。
+## 欢迎大家一起来交流
 
-#####本项目中涉及到相关编码格式，统一为UTF-8格式，GBK格式在我电脑上出了点问题。如果你遇到编码格式问题，请参考每个文件夹下的readme文件中的内容，在对应位置进行修改。
+### 所有说明中提到源码的行数，是进行了相关修改、说明过后的，其中yolov5-5.0说明中提到的行数与官方文件中的不一致，所有说明以本文件为准
+
+#### 本项目中涉及到相关编码格式，统一为UTF-8格式，GBK格式在我电脑上出了点问题。如果你遇到编码格式问题，请参考每个文件夹下的readme文件中的内容，在对应位置进行修改
+
     下列出所有的编码格式所在
     文件 success.py ( 3dataset_processing\success.py ): 42, 43, 110, 111, 114, 115
     文件 another.py (3dataset_processing\another.py ): 20, 105
@@ -25,30 +30,25 @@
     文件 log_dataset.py ( 4train\yolov5-5.0\utils\wandb_logging\log_dataset.py ): 11
     文件 wandb_utils.py ( 4train\yolov5-5.0\utils\wandb_logging\wandb_utils.py ): 57, 75, 194, 208
 
-#####在检查过程中，仍发现读取和写入文件时，路径会出现问题。项目中相关采用相对路径，目前在pycharm上可以完整运行。如果你遇到路径错误问题，请检查工作目录与相对路径，并在对应位置修改。若仍存在错误，无法修改，请使用绝对路径。
+##### 在检查过程中，仍发现读取和写入文件时，路径会出现问题。项目中相关采用相对路径，目前在pycharm上可以完整运行。如果你遇到路径错误问题，请检查工作目录与相对路径，并在对应位置修改。若仍存在错误，无法修改，请使用绝对路径
+
     下列出可能出错的路径所在
     文件 start.py ( 1Image_preprocessing/code/start.py ):
     文件 all.py ( 1Image_preprocessing/code/all.py ):
     文件 success.py ( 3dataset_processing/success.py ): 43, 44, 及后面较多的与路径有关的语句
 
-###yolov5 GitHub地址：https://github.com/ultralytics/yolov5/tree/v5.0
+### yolov5 GitHub地址：<https://github.com/ultralytics/yolov5/tree/v5.0>
 
 * 下为第一次使用yolo测试训练中的部分记录、截图
   ![4train/yolov5-5.0/runs/train/exp9/test_batch0_labels.jpg](4train/yolov5-5.0/runs/train/exp9/test_batch0_labels.jpg)
   ![4train/yolov5-5.0/runs/train/exp9/train_batch0.jpg](4train/yolov5-5.0/runs/train/exp9/train_batch0.jpg)
   ![img_test](4train/yolov5-5.0/runs/train/exp9/results.png)
+  ![4train/yolov5-5.0/runs/train/exp9/train_batch1.jpg](4train/yolov5-5.0/runs/train/exp9/train_batch1.jpg)
 
-![](4train/yolov5-5.0/runs/train/exp9/train_batch1.jpg)
+#### 所有可能用到过的库（未经筛选，显示我装的所有库）
 
-
-
-
-
-
-
-####所有可能用到过的库（未经筛选，显示我装的所有库）
     C:\Users\剑阁9021>conda list
-    
+
     # packages in environment at D:\Anaconda:
     
     # 
@@ -408,17 +408,18 @@
     zope.interface            5.1.2            py38he774522_0    defaults
     zstd                      1.4.5                h04227a9_0    defaults
 
-##如果运行发现问题后，现统一回复：
+## 如果运行发现问题后，现统一回复
 
 * 1、请阅读文档；
 * 2、还有问题：请仔细阅读文档；
 * 3、确实有问题：熟读并背诵文档。
 * 4、如果真的有问题，那么重启可以解决80%的问题，。还有20%咋办，还有20%不用解决啊，这世上哪有能100%解决的问题，是吧！
 
-#问题文件
+## 问题文件
+
 * 可能暂时有点问题，也可能没问题，……过了几天，我好像已经忘了为什么要列出来这些文件了。。。
 * 4训练\yolov5-5.0\hubconf.py
 * 4训练\yolov5-5.0\test.py
 * 4训练\yolov5-5.0\utils\general.py
 * 4训练\yolov5-5.0\utils\google_utils.py
-   * 不用理这几个文件
+  * 不用理这几个文件
