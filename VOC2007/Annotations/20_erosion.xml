@@ -1,0 +1,26 @@
+<annotation>
+	<folder>JPEGImages</folder>
+	<filename>20_erosion.png</filename>
+	<path>D:\Program\VOC2007\JPEGImages\20_erosion.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>889</width>
+		<height>744</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>烧蚀(ablation)</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>60</xmin>
+			<ymin>50</ymin>
+			<xmax>579</xmax>
+			<ymax>684</ymax>
+		</bndbox>
+	</object>
+</annotation>

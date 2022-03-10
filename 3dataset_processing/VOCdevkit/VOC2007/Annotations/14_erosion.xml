@@ -1,0 +1,26 @@
+<annotation>
+	<folder>JPEGImages</folder>
+	<filename>14_erosion.png</filename>
+	<path>D:\Program\VOC2007\JPEGImages\14_erosion.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>960</width>
+		<height>720</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>缺口(gap)</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>366</xmin>
+			<ymin>159</ymin>
+			<xmax>546</xmax>
+			<ymax>306</ymax>
+		</bndbox>
+	</object>
+</annotation>

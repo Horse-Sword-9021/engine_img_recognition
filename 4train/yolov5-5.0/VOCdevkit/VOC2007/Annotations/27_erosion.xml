@@ -1,0 +1,26 @@
+<annotation>
+	<folder>JPEGImages</folder>
+	<filename>27_erosion.png</filename>
+	<path>D:\Program\VOC2007\JPEGImages\27_erosion.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>979</width>
+		<height>734</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>缝隙(Crack)</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>378</xmin>
+			<ymin>52</ymin>
+			<xmax>820</xmax>
+			<ymax>611</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,65 @@
+1、Flaking of abradable lining material（掉块）
+2、Dent（凹痕）
+3、Dent
+4、Dent
+5、Nick				？
+6、Bent（弯曲）
+7、Dent
+8、Dent
+9、Tear（撕裂）
+10、Tear
+11、Tear
+12、Missing  coating
+13、Missing  material
+14、Missing  corner			三个无法区分
+15、Dirty				无法识别
+16、Vane Rubbing			？
+17、Missing coating
+18、Burn hole			烧蚀
+19、Crack（裂纹）			无法识别
+20、Discoloration  and oxidation	无法区别烧蚀
+21、Missing coting
+22、Crack
+23、Crack
+24、Crack
+25、Crack
+26、Crack
+27、Crack
+28、Crack
+29、Crack
+30、Crack
+31、Crack
+32、Crack
+33、Crack
+34、Crack
+35、Crack
+36、Missing material
+37、Missing material
+38、Crack
+39、Crack
+40、Crack
+41、Crack and  Missing material
+42、Missing material
+43、Rubbing
+44、Corrosion			？
+45、Dent
+46、Repaired traces修理痕迹
+47、Dent
+48、Dent
+49、Dent with Crack
+50、Scratch
+51、Scratch
+52、Seal breakage
+53、Seal breakage
+54、Crack
+55、
+56、Crack
+57、Crack
+58、Crack
+59、Crack
+60、Missing material
+61、Burn through  hole with crack	烧蚀
+62、Burn through  hole with crack
+63、Burn through  hole with crack
+64、Carbon
+65、Carbon

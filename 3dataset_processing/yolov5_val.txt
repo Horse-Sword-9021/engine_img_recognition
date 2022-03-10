@@ -1,0 +1,11 @@
+D:\seven_files\Desktop\engine_recognize\3dataset_processing\VOCdevkit/VOC2007/JPEGImages/12_erosion.png
+D:\seven_files\Desktop\engine_recognize\3dataset_processing\VOCdevkit/VOC2007/JPEGImages/1_erosion.png
+D:\seven_files\Desktop\engine_recognize\3dataset_processing\VOCdevkit/VOC2007/JPEGImages/22_erosion.png
+D:\seven_files\Desktop\engine_recognize\3dataset_processing\VOCdevkit/VOC2007/JPEGImages/28_erosion.png
+D:\seven_files\Desktop\engine_recognize\3dataset_processing\VOCdevkit/VOC2007/JPEGImages/30_erosion.png
+D:\seven_files\Desktop\engine_recognize\3dataset_processing\VOCdevkit/VOC2007/JPEGImages/35_erosion.png
+D:\seven_files\Desktop\engine_recognize\3dataset_processing\VOCdevkit/VOC2007/JPEGImages/36_erosion.png
+D:\seven_files\Desktop\engine_recognize\3dataset_processing\VOCdevkit/VOC2007/JPEGImages/37_erosion.png
+D:\seven_files\Desktop\engine_recognize\3dataset_processing\VOCdevkit/VOC2007/JPEGImages/44_erosion.png
+D:\seven_files\Desktop\engine_recognize\3dataset_processing\VOCdevkit/VOC2007/JPEGImages/57_erosion.png
+D:\seven_files\Desktop\engine_recognize\3dataset_processing\VOCdevkit/VOC2007/JPEGImages/62_erosion.png
