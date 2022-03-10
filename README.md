@@ -10,6 +10,8 @@
 
 ## 欢迎大家一起来交流
 
+---
+
 ### 所有说明中提到源码的行数，是进行了相关修改、说明过后的，其中yolov5-5.0说明中提到的行数与官方文件中的不一致，所有说明以本文件为准
 
 #### 本项目中涉及到相关编码格式，统一为UTF-8格式，GBK格式在我电脑上出了点问题。如果你遇到编码格式问题，请参考每个文件夹下的readme文件中的内容，在对应位置进行修改
@@ -44,6 +46,8 @@
   ![4train/yolov5-5.0/runs/train/exp9/train_batch0.jpg](4train/yolov5-5.0/runs/train/exp9/train_batch0.jpg)
   ![img_test](4train/yolov5-5.0/runs/train/exp9/results.png)
   ![4train/yolov5-5.0/runs/train/exp9/train_batch1.jpg](4train/yolov5-5.0/runs/train/exp9/train_batch1.jpg)
+
+---
 
 #### 所有可能用到过的库（未经筛选，显示我装的所有库）
 
@@ -408,6 +412,8 @@
     zope.interface            5.1.2            py38he774522_0    defaults
     zstd                      1.4.5                h04227a9_0    defaults
 
+---
+
 ## 如果运行发现问题后，现统一回复
 
 * 1、请阅读文档；
@@ -423,3 +429,4 @@
 * 4训练\yolov5-5.0\utils\general.py
 * 4训练\yolov5-5.0\utils\google_utils.py
   * 不用理这几个文件
+---
