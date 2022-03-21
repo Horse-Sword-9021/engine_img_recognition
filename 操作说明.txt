@@ -2,3 +2,4 @@
     对用户而言
     图像处理，运行‘1Image_preprocessing/code/start.py’文件，可进行图像批处理，处理过后的图像存放在‘1Image_preprocessing/imgs/operate_imgs’文件夹下
     图片推理，运行‘4train/yolov5-5.0/detect.py’，可进行图片推理，推理结果(识别后的图像)保存在‘4train/yolov5-5.0/runs/detect/exp[i]’系列文件夹下
+    模型的迭代训练（打标签，标签格式转换等有关内容），以及其他源码有关详细内容，参见README文档，供参考学习。
