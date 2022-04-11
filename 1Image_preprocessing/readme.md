@@ -1,5 +1,5 @@
 Horse-Sword
-######engine_img_recognition-main\1Image_preprocessing\code
+###### engine_img_recognition-main\1Image_preprocessing\code
 初始使用opencv版本4.0.1，有些地方与opencv3不同，以下第一解答
 https://stackoverflow.com/questions/54734538/opencv-assertion-failed-215assertion-failed-npoints-0-depth-cv-32
 opencv官方文档https://github.com/opencv/opencv
@@ -29,7 +29,8 @@ easydict版本1.9。
 > 
 > hsf
 
-#####以平滑处理/降噪函数为例，说明all.py和start.py文件中，可能存在的路径问题
+##### 以平滑处理/降噪函数为例，说明all.py和start.py文件中，可能存在的路径问题
+    
     $ python all.py  # webcam
     wd = os.getcwd()                        #获取工作目录
     data_base_dir = os.path.join(wd, "../") #退回工作目录的上级目录    
@@ -50,19 +51,26 @@ easydict版本1.9。
 操作：根据具体数据集选取更合理的操作
 一、
 1、首先设置roi
+
 2、预处理:高斯平滑加二值化即可
+
 3、查找最大轮廓
+
 4、透视变换抠取检测对象
+
 5、再次查找对象区域内的轮廓，筛选出缺陷点
+
 6、缺陷映射回原图
 当采用斜外接矩形获取检测对象时，映射回原图存在裂缝，这是应该斜外接矩形有角度，抠图和映射回去是产生了误差，需要手动修复
+
 7、对图像拼接处进行修复
 
-二、
-预处理:高斯平滑加二值化即可
+二、 预处理:高斯平滑加二值化即可
+
 高斯平滑+腐蚀+边缘检测/梯度操作（会将反光部分识别为缺陷部位）+
 
 三、
+
 先对孔探图像进行灰度化、滤波降噪、锐化、阈值分割、边缘提取等系列的预处理，
 再基于样条插值自动测量叶片缺口的尺寸，该方法的局限是与缺陷的边缘特征强关联，
 仅对单一场景、边缘特征明显的叶片缺口图像有效。
