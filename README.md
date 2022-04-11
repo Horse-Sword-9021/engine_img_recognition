@@ -1,5 +1,7 @@
 # Horse-Sword
-  
+
+NUAA大创，独立开发，新人探索
+
 ## 新人第一次尝试，如有不妥，还请见谅。别喷，喷就是你对
 
 ## 如有疑问，可联系
@@ -10,7 +12,19 @@
 
 ## 欢迎大家一起来交流
 
--- -
+---
+
+## 软件环境/工具
+
+    1、开发软件的硬件环境： AMD Ryzen 7 4800H with Radeon Graphics+16GB内存+512GB硬盘
+
+    2、开发软件的操作系统
+
+    2、Anaconda集成的Python环境，需安装OpenCV、matplotlib等框架环境，具体在源码说明文档中有详细介绍。开发工具，Pycharm
+
+    3、运行平台/操作系统：Windows(建议Windows10)
+
+---
 
 ### 所有说明中提到源码的行数，是进行了相关修改、说明过后的，其中yolov5-5.0说明中提到的行数与官方文件中的不一致，所有说明以本文件为准
 
@@ -49,14 +63,13 @@
 
 #### 所有可能用到过的库（未经筛选，显示我装的所有库）
 
-    C:\Users\剑阁9021>conda list
-
-    # packages in environment at D:\Anaconda:
+    Microsoft Windows [版本 10.0.19042.1645]
+    (c) Microsoft Corporation。保留所有权利。
     
-    # 
-    
+    CUsers剑阁9021conda list
+    # packages in environment at DAnaconda
+    #
     # Name                    Version                   Build  Channel
-    
     _ipyw_jlab_nb_ext_conf    0.1.0                    py38_0    defaults
     absl-py                   0.14.1                   pypi_0    pypi
     alabaster                 0.7.12                     py_0    defaults
@@ -262,7 +275,7 @@
     pep8                      1.7.1                    py38_0    defaults
     pexpect                   4.8.0                    py38_0    defaults
     pickleshare               0.7.5                 py38_1000    defaults
-    pillow                    8.0.1            py38h4fa10fc_0    defaults
+    pillow                    9.0.1                    pypi_0    pypi
     pip                       20.2.4           py38haa95532_0    defaults
     pkginfo                   1.6.1            py38haa95532_0    defaults
     pluggy                    0.13.1                   py38_0    defaults
@@ -374,6 +387,7 @@
     tornado                   6.0.4            py38he774522_1    defaults
     tqdm                      4.50.2                     py_0    defaults
     traitlets                 5.0.5                      py_0    defaults
+    ttkbootstrap              1.7.4                    pypi_0    pypi
     typing_extensions         3.7.4.3                    py_0    defaults
     ujson                     4.0.1            py38ha925a31_0    defaults
     unicodecsv                0.14.1                   py38_0    defaults
